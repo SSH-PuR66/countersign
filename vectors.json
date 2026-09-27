@@ -1,0 +1,1276 @@
+{
+  "schema_version": 1,
+  "clock": 1790467200,
+  "available_tools": [
+    "reports.read",
+    "reports.export"
+  ],
+  "scope": "Synthetic deterministic authorization fixtures; no model or network execution.",
+  "scenarios": [
+    {
+      "id": "approved-read",
+      "title": "A bounded read",
+      "kind": "benign",
+      "description": "The approved proposal arrives unchanged.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "cf8a1b0da706839179a8c6e6f007a0cb"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": true,
+        "reason": "approved"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "key-order",
+      "title": "JSON key order",
+      "kind": "benign",
+      "description": "Reordering object members preserves intent.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "limit": 3,
+          "include": {
+            "appendix": false
+          },
+          "format": "summary"
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "c67bc6c484fcf953e53f69856f5029cf"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": true,
+        "reason": "approved"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "near-expiry",
+      "title": "Last valid second",
+      "kind": "benign",
+      "description": "The call arrives one second before expiry.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467141,
+        "expires_at": 1790467201,
+        "nonce": "29d743f5c1939bd332a647c21f370ebc"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": true,
+        "reason": "approved"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "no-approval",
+      "title": "Available is not approved",
+      "kind": "unauthorized",
+      "description": "The tool exists, but no grant exists.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": null,
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "signature-tamper",
+      "title": "A changed signature",
+      "kind": "unauthorized",
+      "description": "A well-formed signature has one bit changed.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "94c7d39bf5164beffb33a08778d897a1"
+      },
+      "fixture": {
+        "signature": "tampered",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "bad_signature"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "target-swap",
+      "title": "A different report",
+      "kind": "unauthorized",
+      "description": "A public read is redirected to a private report.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:private",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "7f86ebb5053a71bf25d7ef1cb42b3ada"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "target_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "target-prefix",
+      "title": "A convincing prefix",
+      "kind": "unauthorized",
+      "description": "The approved target is only a prefix of the requested target.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public:internal",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "60e1d3bef18153f418718ad174c71fad"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "target_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "args-change",
+      "title": "Three becomes thirty",
+      "kind": "unauthorized",
+      "description": "A numeric argument changes after approval.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 30
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "924a8a59e9fd21cc4ae75f6dfb86b98f"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "nested-args",
+      "title": "A buried switch",
+      "kind": "unauthorized",
+      "description": "An appendix switch changes inside a nested object.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": true
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "4aba5ae71590226e9f9b65e513e3b74c"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "extra-args",
+      "title": "An added export option",
+      "kind": "unauthorized",
+      "description": "A new argument was never part of the approval.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3,
+          "destination": "archive:external"
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "23395fff197d235f2583befe1f387fad"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "bool-is-not-int",
+      "title": "False is not zero",
+      "kind": "unauthorized",
+      "description": "False and zero are distinct JSON values.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": 0
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "49b36b8ea25b6209f75e410b06ca7434"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "tool-swap",
+      "title": "Read becomes export",
+      "kind": "unauthorized",
+      "description": "Another available tool is substituted.",
+      "proposal": {
+        "tool": "reports.export",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "a34798ab7afe5fc264a2d02405ce64b4"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "tool_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "actor-swap",
+      "title": "Another caller",
+      "kind": "unauthorized",
+      "description": "The authenticated actor differs from the approved actor.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:other",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "0b4a9e76d84a95b4528df0316a3917aa"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "recipient_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "audience-swap",
+      "title": "Another host",
+      "kind": "unauthorized",
+      "description": "A valid grant is presented to the wrong execution host.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "external-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "d457065a4e900200107ec38b15dca44f"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "recipient_mismatch"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "expired",
+      "title": "The expiry boundary",
+      "kind": "unauthorized",
+      "description": "At expires_at, the grant is already invalid.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467140,
+        "expires_at": 1790467200,
+        "nonce": "fa64ea1e82e1206f828ab2a02917c7e9"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_expired"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "future",
+      "title": "Not valid yet",
+      "kind": "unauthorized",
+      "description": "The issuer time is one second ahead of the host clock.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467201,
+        "expires_at": 1790467261,
+        "nonce": "ebb3de8a3d9a40366132eb5deb5af44e"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "future_grant"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "replay",
+      "title": "A second attempt",
+      "kind": "unauthorized",
+      "description": "The same nonce was committed by a previous accepted call.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "ac203c9843b5bd8c883e07039ff82820"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": true
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "replay"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "proposal-extra",
+      "title": "An extra instruction",
+      "kind": "unauthorized",
+      "description": "Unknown proposal fields are rejected, even with a valid grant.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        },
+        "override": "approved"
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "3af9c24ee284cab15b193c67872a095b"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "input_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "envelope-extra",
+      "title": "An extended envelope",
+      "kind": "unauthorized",
+      "description": "Unknown grant-envelope fields are rejected.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "96796336b6a1689c6a6b571c468971df"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false,
+        "extra_envelope_field": true
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "claims-extra",
+      "title": "An extended claim",
+      "kind": "unauthorized",
+      "description": "A signed grant with an unknown claim is rejected.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "9ab1f2333934911b16e7eabe6eb47b89",
+        "admin": true
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "boolean-time",
+      "title": "True is not a timestamp",
+      "kind": "unauthorized",
+      "description": "Python's bool-is-int relationship must not reach the policy.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": true,
+        "expires_at": 1790467260,
+        "nonce": "ddafaacbf1adbedc1b73ce61f4f61518"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "boolean-version",
+      "title": "True is not version one",
+      "kind": "unauthorized",
+      "description": "A boolean version is not accepted as integer 1.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": true,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "cb7c576a02cffcb71769096820070929"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "long-window",
+      "title": "An oversized lifetime",
+      "kind": "unauthorized",
+      "description": "A signed approval exceeds the 300-second policy limit.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467501,
+        "nonce": "c04d33ef6a6591d1924995beb05710ff"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "invalid_window"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "reversed-window",
+      "title": "Expiry before issuance",
+      "kind": "unauthorized",
+      "description": "A signed approval has a reversed time interval.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467199,
+        "nonce": "664f5dc811402c412287a5dae34fc715"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "invalid_window"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "malformed-signature",
+      "title": "Invalid signature syntax",
+      "kind": "unauthorized",
+      "description": "A signature with invalid encoding is rejected before verification.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "d7270d5d8af1037bc7e1e83732344f9d"
+      },
+      "fixture": {
+        "signature": "malformed",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "invalid-nonce",
+      "title": "A short nonce",
+      "kind": "unauthorized",
+      "description": "A signed nonce violates the fixed 128-bit encoding contract.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "00"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "null-arguments",
+      "title": "No arguments object",
+      "kind": "unauthorized",
+      "description": "Null cannot stand in for the approved arguments object.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": null
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "9fb9276c16632c6bac4466ad2251c6d4"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "input_invalid"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "signed-claim-change",
+      "title": "An edited grant",
+      "kind": "unauthorized",
+      "description": "A grant target changes without a new signature.",
+      "proposal": {
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "bf8b5308711ed0d7693bbafe008a471c"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false,
+        "change_claim_after_signing": true
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "bad_signature"
+      },
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      }
+    },
+    {
+      "id": "unavailable-tool",
+      "title": "An unknown tool",
+      "kind": "negative_control",
+      "description": "Both policies reject an unavailable, unapproved tool.",
+      "proposal": {
+        "tool": "reports.delete",
+        "target": "report:call-boundary:public",
+        "args": {
+          "format": "summary",
+          "include": {
+            "appendix": false
+          },
+          "limit": 3
+        }
+      },
+      "trusted_context": {
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host"
+      },
+      "grant_claims": {
+        "version": 1,
+        "actor": "analyst:sergio",
+        "audience": "portfolio-research-host",
+        "tool": "reports.read",
+        "target": "report:call-boundary:public",
+        "args_sha256": "da076e0d9e915a9f38ec723a3ffc77fde11b80788698ab4c10768dff176d71cd",
+        "issued_at": 1790467200,
+        "expires_at": 1790467260,
+        "nonce": "380a0c418b086625d2c9dc094225a8de"
+      },
+      "fixture": {
+        "signature": "valid",
+        "replay": false
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "tool_mismatch"
+      },
+      "baseline": {
+        "allowed": false,
+        "reason": "tool_unavailable"
+      }
+    }
+  ]
+}

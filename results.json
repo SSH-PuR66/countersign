@@ -1,0 +1,1873 @@
+{
+  "schema_version": 1,
+  "clock": 1790467200,
+  "method": "One ephemeral signing key per run; separate persistent SQLite file per scenario.",
+  "scope": "Curated local fixtures, not an attack success rate or live-model benchmark.",
+  "summary": {
+    "scenarios": 29,
+    "matched_expected": 29,
+    "unauthorized_scenarios": 25,
+    "baseline_unauthorized_allows": 25,
+    "bounded_unauthorized_allows": 0,
+    "benign_scenarios": 3,
+    "bounded_benign_allows": 3
+  },
+  "scenarios": [
+    {
+      "id": "approved-read",
+      "kind": "benign",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": true,
+        "reason": "approved"
+      },
+      "actual": {
+        "allowed": true,
+        "reason": "approved",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": true,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": true,
+            "detail": "Nonce committed atomically to the persistent replay ledger."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "key-order",
+      "kind": "benign",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": true,
+        "reason": "approved"
+      },
+      "actual": {
+        "allowed": true,
+        "reason": "approved",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": true,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": true,
+            "detail": "Nonce committed atomically to the persistent replay ledger."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "near-expiry",
+      "kind": "benign",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": true,
+        "reason": "approved"
+      },
+      "actual": {
+        "allowed": true,
+        "reason": "approved",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": true,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": true,
+            "detail": "Nonce committed atomically to the persistent replay ledger."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "no-approval",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": false,
+            "detail": "Missing, malformed, or unknown grant fields."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "signature-tamper",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "bad_signature"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "bad_signature",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": false,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "target-swap",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "target_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "target_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": false,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "target-prefix",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "target_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "target_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": false,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "args-change",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "args_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": false,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "nested-args",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "args_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": false,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "extra-args",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "args_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": false,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "bool-is-not-int",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "args_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "args_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": false,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "tool-swap",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "tool_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "tool_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": false,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "actor-swap",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "recipient_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "recipient_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": false,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "audience-swap",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "recipient_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "recipient_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": false,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "expired",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_expired"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_expired",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": false,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "future",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "future_grant"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "future_grant",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": false,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "replay",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "replay"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "replay",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": true,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": false,
+            "detail": "Nonce committed atomically to the persistent replay ledger."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "proposal-extra",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "input_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "input_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": false,
+            "detail": "Proposal or trusted context violates the input contract."
+          },
+          {
+            "name": "grant_shape",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "envelope-extra",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": false,
+            "detail": "Missing, malformed, or unknown grant fields."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "claims-extra",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": false,
+            "detail": "Missing, malformed, or unknown grant fields."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "boolean-time",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": false,
+            "detail": "Missing, malformed, or unknown grant fields."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "boolean-version",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": false,
+            "detail": "Missing, malformed, or unknown grant fields."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "long-window",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "invalid_window"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "invalid_window",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": false,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "reversed-window",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "invalid_window"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "invalid_window",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": false,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "malformed-signature",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": false,
+            "detail": "Missing, malformed, or unknown grant fields."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "invalid-nonce",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "grant_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "grant_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": false,
+            "detail": "Missing, malformed, or unknown grant fields."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "null-arguments",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "input_invalid"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "input_invalid",
+        "checks": [
+          {
+            "name": "input",
+            "ok": false,
+            "detail": "Proposal or trusted context violates the input contract."
+          },
+          {
+            "name": "grant_shape",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "signature",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "signed-claim-change",
+      "kind": "unauthorized",
+      "baseline": {
+        "allowed": true,
+        "reason": "tool_available"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "bad_signature"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "bad_signature",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": false,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "tool",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    },
+    {
+      "id": "unavailable-tool",
+      "kind": "negative_control",
+      "baseline": {
+        "allowed": false,
+        "reason": "tool_unavailable"
+      },
+      "expected": {
+        "allowed": false,
+        "reason": "tool_mismatch"
+      },
+      "actual": {
+        "allowed": false,
+        "reason": "tool_mismatch",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": false,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "arguments",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "time",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "matched_expected": true
+    }
+  ]
+}

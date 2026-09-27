@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-09-27T05:12:34.091889+00:00",
+  "command": "python verify.py",
+  "runtime": {
+    "python": "3.14.5",
+    "implementation": "CPython",
+    "platform": "Windows"
+  },
+  "tests_run": 56,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "fixture_exit_code": 0,
+  "success": true,
+  "source_sha256": {
+    "boundary.py": "7a5e53bdcc7254752d31062e4abf375ad5c49c3f2dede60adf80ec33e833d5b3",
+    "fixtures.py": "3e7f29ea8eeaf255e690f270a961a1a614df07164fec39704a2d126dd6ef35b6",
+    "test_boundary.py": "0046cf01cef2bff1d220671d9de304fcff22a5485e05b170876485175bbdb87b",
+    "verify.py": "53d31bb4f4f201ee79c75fc166f0a2004d5ab8e4ec896691fb8895d2a828cdf3"
+  }
+}
