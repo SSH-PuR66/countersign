@@ -1,4 +1,6 @@
-# Call Boundary
+# Countersign
+
+Previously published as Call Boundary. The repository name and presentation changed; recorded fixtures, grant identifiers, and regression evidence retain their original names and hashes.
 
 A model proposes a call to `reports.read`. That name is available. Does that authorize a different report, extra arguments, another caller, or a second attempt?
 
