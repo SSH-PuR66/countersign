@@ -1,10 +1,13 @@
 # Countersign
+### Attack the gap between an available tool and an approved action
 
-Previously published as Call Boundary. The repository name and presentation changed; recorded fixtures, grant identifiers, and regression evidence retain their original names and hashes.
+A caller keeps the tool name but swaps the report, changes a nested argument, or replays the request from another process. The fixture baseline accepts every one of the 25 unauthorized proposals. The exact-call gate accepts none of them and preserves all three benign controls.
 
-A model proposes a call to `reports.read`. That name is available. Does that authorize a different report, extra arguments, another caller, or a second attempt?
+I built the Python reference gate, the HMAC grant format, the SQLite replay ledger, and the adversarial corpus. An approval binds the actor, execution audience, tool, target, complete arguments, time window, and unused nonce. The output is a decision with inspectable checks.
 
-This experiment makes those questions executable. A Python reference gate accepts a proposal only when it matches a host-issued approval bound to the actor, audience, exact tool, exact target, full arguments, time window, and unused nonce. It returns a decision and the checks behind it. Nothing is fetched, exported, paid, or executed.
+[Open the experiment](https://sergrdz.pages.dev/labs/call-boundary/) · [Gate implementation](boundary.py) · [Adversarial tests](test_boundary.py) · [Recorded test report](test-report.json)
+
+**Research type:** original controlled authorization experiment. **Execution boundary:** decision-only gate. **Stack:** Python standard library, HMAC-SHA256, SQLite.
 
 ## Run it
 
@@ -95,7 +98,7 @@ python boundary.py --input request.json --actor analyst:sergio --audience resear
 
 `host.key` contains a hexadecimal secret of at least 32 random bytes. The packet must contain a real grant issued for the same host context. The browser exhibit contains a separate, limited Web Crypto demonstration using an ephemeral in-memory key, plus the recorded Python results. It does not possess the host signing key or enforce an execution boundary.
 
-## What this does not establish
+## Integration boundary
 
 This is a local reference gate, not an MCP server, protocol implementation, OAuth provider, or prompt-injection cure. No vulnerable third-party product is identified. It neither evaluates the merits of a requested operation nor knows whether a report's contents changed after approval.
 
@@ -108,3 +111,4 @@ An accepted decision is consumed even if a future executor crashes before acting
 MCP's [2026-07-28 tools specification](https://modelcontextprotocol.io/specification/2026-07-28/server/tools) distinguishes exposed tools from the access controls implementations must enforce, recommends showing inputs for sensitive confirmations, and treats state handles as names whose authorization must be checked on each call. Its [security guidance](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices) discusses audience validation, explicit scoped consent, and single-use state in their protocol contexts.
 
 Those are motivations for this local experiment. The grant format and measured results here are this project's own; they are not an MCP requirement, conformance test, or vulnerability claim.
+
