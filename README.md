@@ -1,4 +1,6 @@
-# Countersign
+# Sealbreak
+
+Previously published as Countersign. Repository URLs and fixture paths remain stable.
 ### Attack the gap between an available tool and an approved action
 
 A caller keeps the tool name but swaps the report, changes a nested argument, or replays the request from another process. The fixture baseline accepts every one of the 25 unauthorized proposals. The exact-call gate accepts none of them and preserves all three benign controls.
@@ -111,4 +113,3 @@ An accepted decision is consumed even if a future executor crashes before acting
 MCP's [2026-07-28 tools specification](https://modelcontextprotocol.io/specification/2026-07-28/server/tools) distinguishes exposed tools from the access controls implementations must enforce, recommends showing inputs for sensitive confirmations, and treats state handles as names whose authorization must be checked on each call. Its [security guidance](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices) discusses audience validation, explicit scoped consent, and single-use state in their protocol contexts.
 
 Those are motivations for this local experiment. The grant format and measured results here are this project's own; they are not an MCP requirement, conformance test, or vulnerability claim.
-
