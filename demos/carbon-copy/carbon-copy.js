@@ -94,6 +94,10 @@
     if (!report || preference.matches) return;
     if (playing) return stop('Paused. Manual controls keep the current recorded state.');
     if (step === 3) step = 0;
+    // A click can scroll the controls into view before the observer delivers
+    // its next frame. Sample current geometry at this explicit user action.
+    const bounds = $('experiment').getBoundingClientRect();
+    visible = bounds.bottom > 0 && bounds.top < window.innerHeight;
     playing = true; document.body.dataset.playing = 'true'; $('play').setAttribute('aria-pressed', 'true');
     $('motion-note').textContent = 'Playing four recorded states. No signing or tool execution occurs.';
     render(); schedule();
