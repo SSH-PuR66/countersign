@@ -1,5 +1,11 @@
 # Sealbreak
 
+**Created and maintained by [Sergio Rodriguez (SSH-PuR66)](https://github.com/SSH-PuR66).**
+
+[Watch the replay mechanism in Attack Atlas](https://sergrdz.pages.dev/labs/attack-atlas/#sealbreak) · [Read the gate](boundary.py) · [Inspect the recorded decisions](results.json)
+
+![Sealbreak: an original etched approval seal fractured by a returning grant.](https://sergrdz.pages.dev/images/sealbreak-plate.png)
+
 Previously published as Countersign. Repository URLs and fixture paths remain stable.
 ### Attack the gap between an available tool and an approved action
 
