@@ -2,9 +2,11 @@
 
 **Created and maintained by [Sergio Rodriguez (SSH-PuR66)](https://github.com/SSH-PuR66).**
 
-[Watch the replay mechanism in Attack Atlas](https://sergrdz.pages.dev/labs/attack-atlas/#sealbreak) · [Read the gate](boundary.py) · [Inspect the recorded decisions](results.json)
+[Step through Carbon Copy](https://sergrdz.pages.dev/labs/call-boundary/demos/carbon-copy/) · [Watch Attack Atlas](https://sergrdz.pages.dev/labs/attack-atlas/#sealbreak) · [Read the gate](boundary.py)
 
-![Sealbreak: an original etched approval seal fractured by a returning grant.](https://sergrdz.pages.dev/images/sealbreak-plate.png)
+[![Sealbreak: an original etched approval seal fractured by a returning grant.](assets/sealbreak-plate.png)](https://sergrdz.pages.dev/labs/call-boundary/demos/carbon-copy/)
+
+Original project artwork generated for Sergio Rodriguez. The illustration is separate from the recorded execution evidence.
 
 Previously published as Countersign. Repository URLs and fixture paths remain stable.
 ### Attack the gap between an available tool and an approved action
@@ -34,7 +36,7 @@ python fixtures.py
 
 ## Observed result
 
-The committed run passed **56 tests**. The fixture comparison contains **29 scenarios**:
+The current run passes **84 tests**, including 13 input-ownership and copy-bound regressions and 15 saved-record integrity checks. The fixture comparison contains **29 scenarios**:
 
 | Calls in this corpus | Count | Tool-name baseline allows | Approval gate allows |
 | --- | ---: | ---: | ---: |
@@ -47,6 +49,18 @@ All 29 gate decisions match their expected reasons. These are curated local fixt
 The tests exercise separate processes and threads, including 12 simultaneous thread attempts and eight attempts across four processes. Each same-nonce race produces exactly one accepted decision. Tests also open the ledger in a new interpreter, remove or replace its file, change a nested argument, reorder object keys, and advance the clock between validation and commit.
 
 ## The boundary
+
+### Carbon Copy: caller mutation during validation
+
+The original verifier retained the caller's claims dictionary after checking its HMAC. Two deterministic tests failed at commit `42ae08e10603`: a clock callback changed the nonce later written to SQLite, and another extended the expiry after signature verification. This is a local API ownership defect; the tests do not establish remote exploitability or an untrusted clock.
+
+The verifier now takes bounded private JSON snapshots before validation. Subsequent checks and nonce consumption use the same copied values. Copies reject custom object hooks, cycles, excessive breadth/depth, invalid Unicode and oversized encoded input. The two original failures now pass, alongside the existing concurrency and CLI tests.
+
+Run `python snapshot_demo.py` for the actual SQLite decision record, or serve the repository with `python -m http.server 8788 --bind 127.0.0.1` and open `http://127.0.0.1:8788/demos/carbon-copy/`. [Carbon Copy source](snapshot_demo.py) · [recorded result](snapshot-report.json) · [regressions](test_snapshot.py).
+
+`python verify_snapshot_record.py` checks the saved record without executing the gate or rewriting evidence. It rejects changed source hashes, malformed or duplicated JSON fields, inconsistent decisions, and ledger discrepancies. This separation between execution and record inspection draws on the evaluation-stage design of [HarmBench](https://github.com/centerforaisafety/HarmBench); this verifier is original code and copies no upstream implementation. A matching hash establishes consistency with the local source files, not authenticity or proof of execution.
+
+Snapshots make one evaluation internally consistent. They do not make an external executor use that snapshot, and they do not protect a trusted process from arbitrary in-process code.
 
 ```text
 Trusted host                                Untrusted proposal

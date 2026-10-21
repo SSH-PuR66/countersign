@@ -20,6 +20,8 @@ VERSION = 1
 MAX_LIFETIME = 300
 MAX_ARGS_BYTES = 16_384
 MAX_INTEGER = (1 << 53) - 1
+MAX_SNAPSHOT_NODES = 4096
+MAX_SNAPSHOT_BYTES = 65_536
 DOMAIN = b"call-boundary/approval/v1\x00"
 CLAIM_FIELDS = frozenset({
     "version", "actor", "audience", "tool", "target", "args_sha256",
@@ -107,6 +109,58 @@ def arguments_digest(args: Any) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def snapshot_json(value: Any) -> Any:
+    """Own a bounded JSON tree before checking or retaining any of its fields.
+
+    Exact builtin types avoid invoking caller-defined copy/serialization hooks.
+    A changing collection is either copied into one private tree or rejected;
+    every later signature and binding check reads only that private tree.
+    """
+    nodes = 0
+    byte_count = 0
+
+    def copy(item: Any, depth: int) -> Any:
+        nonlocal nodes, byte_count
+        nodes += 1
+        if nodes > MAX_SNAPSHOT_NODES or depth > 20:
+            raise InvalidInput("Input exceeds the snapshot structure limit.")
+        kind = type(item)
+        if item is None or kind is bool:
+            return item
+        if kind is int:
+            if abs(item) > MAX_INTEGER:
+                raise InvalidInput("Integer is outside the exact JSON number range.")
+            return item
+        if kind is str:
+            if len(item) > MAX_SNAPSHOT_BYTES:
+                raise InvalidInput("Input exceeds the snapshot byte limit.")
+            try:
+                byte_count += len(item.encode("utf-8"))
+            except UnicodeError as exc:
+                raise InvalidInput("Invalid Unicode in input.") from exc
+            if byte_count > MAX_SNAPSHOT_BYTES:
+                raise InvalidInput("Input exceeds the snapshot byte limit.")
+            return item
+        if kind is list and len(item) <= 1024:
+            return [copy(child, depth + 1) for child in item]
+        if kind is dict and len(item) <= 1024:
+            result = {}
+            for key, child in item.items():
+                if type(key) is not str:
+                    raise InvalidInput("JSON keys must be strings.")
+                result[copy(key, depth + 1)] = copy(child, depth + 1)
+            return result
+        raise InvalidInput("Unsupported input type or collection size.")
+
+    try:
+        result = copy(value, 0)
+        if len(canonical_json(result)) > MAX_SNAPSHOT_BYTES:
+            raise InvalidInput("Encoded input exceeds the snapshot byte limit.")
+        return result
+    except (RuntimeError, RecursionError) as exc:
+        raise InvalidInput("Input changed during copying or exceeded its bounds.") from exc
+
+
 def validate_proposal(proposal: Any) -> str:
     _fields(proposal, frozenset({"tool", "target", "args"}))
     _identifier(proposal["tool"])
@@ -173,6 +227,7 @@ def issue_grant(key: bytes, context: TrustedContext, proposal: dict[str, Any], *
     """Host-side example: call only AFTER the host approves this exact proposal."""
     _key(key)
     context.validate()
+    proposal = snapshot_json(proposal)
     digest = validate_proposal(proposal)
     _timestamp(now)
     if type(lifetime) is not int or not 1 <= lifetime <= MAX_LIFETIME:
@@ -263,6 +318,7 @@ class ApprovalGate:
             if type(context) is not TrustedContext:
                 raise InvalidInput("Host context is required.")
             context.validate()
+            proposal = snapshot_json(proposal)
             digest = validate_proposal(proposal)
         except (InvalidInput, TypeError, ValueError, OverflowError, RecursionError):
             check("input", False, "Proposal or trusted context violates the input contract.")
@@ -270,6 +326,7 @@ class ApprovalGate:
         check("input", True, "Exact proposal fields and bounded JSON arguments.")
 
         try:
+            grant = snapshot_json(grant)
             _fields(grant, frozenset({"claims", "signature"}))
             validate_claims(grant["claims"])
             signature = grant["signature"]

@@ -1,22 +1,28 @@
 {
   "schema_version": 1,
-  "verified_at": "2026-09-27T05:12:34.091889+00:00",
+  "verified_at": "2026-10-21T19:42:22.717746+00:00",
   "command": "python verify.py",
   "runtime": {
     "python": "3.14.5",
     "implementation": "CPython",
     "platform": "Windows"
   },
-  "tests_run": 56,
+  "tests_run": 84,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
   "fixture_exit_code": 0,
+  "snapshot_exit_code": 0,
+  "record_integrity_exit_code": 0,
   "success": true,
   "source_sha256": {
-    "boundary.py": "7a5e53bdcc7254752d31062e4abf375ad5c49c3f2dede60adf80ec33e833d5b3",
+    "boundary.py": "baf08fbbb46bba6a8b435fc4751dd29c633b2ef627b40a649a215dd2313e525a",
     "fixtures.py": "3e7f29ea8eeaf255e690f270a961a1a614df07164fec39704a2d126dd6ef35b6",
     "test_boundary.py": "0046cf01cef2bff1d220671d9de304fcff22a5485e05b170876485175bbdb87b",
-    "verify.py": "53d31bb4f4f201ee79c75fc166f0a2004d5ab8e4ec896691fb8895d2a828cdf3"
+    "test_snapshot.py": "ee24855af315dbbd7c0b905f65d2f43147d35e20db681408c3a7a0f44e09b360",
+    "snapshot_demo.py": "9e84956f7d26fbf5c72186fb2af811d89c4acfbda319f824ca1feef242d27d67",
+    "verify_snapshot_record.py": "08daaab7d4063d9431cf24998b149526f74a29324845f5def3a350e107c37765",
+    "test_record_integrity.py": "b236f54d178e80dfd5973bc87c590ba86421964b24633366f719d5e02336724c",
+    "verify.py": "e18835fe13b7761b2330dc547a05fd887c176d0cad2f87063520437aa437976e"
   }
 }
