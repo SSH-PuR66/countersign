@@ -63,19 +63,25 @@ def _reject_constant(_: str) -> None:
     raise RecordInvalid("record: non-finite JSON number")
 
 
-def read_record(path: Path) -> Any:
+def decode_record(raw: bytes) -> Any:
+    """Decode bounded evidence bytes; bundle readers need no temporary extraction."""
     try:
-        with path.open("rb") as stream:
-            raw = stream.read(MAX_RECORD_BYTES + 1)
+        require(type(raw) is bytes, "record: expected bytes")
         require(len(raw) <= MAX_RECORD_BYTES, "record: exceeds 128 KiB")
         return json.loads(raw.decode("utf-8"), object_pairs_hook=_pairs,
                           parse_constant=_reject_constant)
-    except OSError as exc:
-        raise RecordInvalid("record: missing or unreadable file") from exc
     except RecordInvalid:
         raise
     except (ValueError, UnicodeError, RecursionError) as exc:
         raise RecordInvalid("record: malformed UTF-8 JSON") from exc
+
+
+def read_record(path: Path) -> Any:
+    try:
+        with path.open("rb") as stream:
+            return decode_record(stream.read(MAX_RECORD_BYTES + 1))
+    except OSError as exc:
+        raise RecordInvalid("record: missing or unreadable file") from exc
 
 
 def validate_case(case: Any) -> str:
@@ -135,7 +141,12 @@ def validate_case(case: Any) -> str:
     return name
 
 
-def validate_record(report: Any, source_root: Path) -> None:
+def validate_record(report: Any, source_root: Path | None = None, *,
+                    source_bytes: dict[str, bytes] | None = None) -> None:
+    require((source_root is None) != (source_bytes is None), "source: choose files or owned bytes")
+    if source_bytes is not None:
+        fields(source_bytes, set(SOURCE_NAMES), "source bytes")
+        require(all(type(value) is bytes for value in source_bytes.values()), "source: expected bytes")
     fields(report, {"schema_version", "name", "recorded_at", "execution", "cases", "passed",
                     "source_sha256", "baseline", "scope"}, "record")
     require(type(report["schema_version"]) is int and report["schema_version"] == 1,
@@ -172,13 +183,16 @@ def validate_record(report: Any, source_root: Path) -> None:
     fields(hashes, set(SOURCE_NAMES), "source_sha256")
     for name in SOURCE_NAMES:
         hex_string(hashes[name], 64, f"source_sha256.{name}")
-        try:
-            digest = hashlib.sha256()
-            with (source_root / name).open("rb") as stream:
-                for chunk in iter(lambda: stream.read(65_536), b""):
-                    digest.update(chunk)
-        except OSError as exc:
-            raise RecordInvalid(f"source: missing or unreadable {name}") from exc
+        digest = hashlib.sha256()
+        if source_bytes is not None:
+            digest.update(source_bytes[name])
+        else:
+            try:
+                with (source_root / name).open("rb") as stream:
+                    for chunk in iter(lambda: stream.read(65_536), b""):
+                        digest.update(chunk)
+            except OSError as exc:
+                raise RecordInvalid(f"source: missing or unreadable {name}") from exc
         require(digest.hexdigest() == hashes[name], f"source: SHA-256 mismatch for {name}")
 
 
