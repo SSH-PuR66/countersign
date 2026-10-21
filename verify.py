@@ -13,6 +13,7 @@ import unittest
 import fixtures
 import snapshot_demo
 import verify_snapshot_record
+from evidence_bundle import RUN_SOURCE_NAMES
 
 
 def main() -> int:
@@ -21,12 +22,9 @@ def main() -> int:
     tests = unittest.TextTestRunner(verbosity=1).run(suite)
     fixture_exit = fixtures.main()
     snapshot_exit = snapshot_demo.main()
-    try:
-        verify_snapshot_record.verify_record(folder / "snapshot-report.json", folder)
-        record_exit = 0
-    except verify_snapshot_record.RecordInvalid:
-        record_exit = 1
-    sources = ("boundary.py", "fixtures.py", "test_boundary.py", "test_snapshot.py", "snapshot_demo.py", "verify_snapshot_record.py", "test_record_integrity.py", "verify.py")
+    record_result = verify_snapshot_record.verify_record(folder / "snapshot-report.json", folder)
+    record_exit = 0 if record_result["passed"] else 1
+    sources = RUN_SOURCE_NAMES
     report = {
         "schema_version": 1,
         "verified_at": datetime.now(timezone.utc).isoformat(),

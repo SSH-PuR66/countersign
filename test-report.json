@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "verified_at": "2026-10-21T19:42:22.717746+00:00",
+  "verified_at": "2026-10-21T20:08:44.827445+00:00",
   "command": "python verify.py",
   "runtime": {
     "python": "3.14.5",
     "implementation": "CPython",
     "platform": "Windows"
   },
-  "tests_run": 84,
+  "tests_run": 105,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
@@ -21,8 +21,10 @@
     "test_boundary.py": "0046cf01cef2bff1d220671d9de304fcff22a5485e05b170876485175bbdb87b",
     "test_snapshot.py": "ee24855af315dbbd7c0b905f65d2f43147d35e20db681408c3a7a0f44e09b360",
     "snapshot_demo.py": "9e84956f7d26fbf5c72186fb2af811d89c4acfbda319f824ca1feef242d27d67",
-    "verify_snapshot_record.py": "08daaab7d4063d9431cf24998b149526f74a29324845f5def3a350e107c37765",
+    "verify_snapshot_record.py": "0c1527481cd203e14e0fefaa1f31ade150847dc1ffde8b777125c0069d12ca9e",
     "test_record_integrity.py": "b236f54d178e80dfd5973bc87c590ba86421964b24633366f719d5e02336724c",
-    "verify.py": "e18835fe13b7761b2330dc547a05fd887c176d0cad2f87063520437aa437976e"
+    "evidence_bundle.py": "9402ae204cad20e79d131d7adcc9b0cdba83dd7f96fc5e64924c27e73aab0eed",
+    "test_evidence_bundle.py": "9e4c28c70cdc416239b539da7de8a150d4d2e9c713f653fb852fe39539d877df",
+    "verify.py": "a2da736e4233d4dfdc699f5acaf2745ff4555fa2669023c4266395ddc5f0fa57"
   }
 }

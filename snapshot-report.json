@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "name": "Carbon Copy",
-  "recorded_at": "2026-10-21T19:42:22.709804+00:00",
+  "recorded_at": "2026-10-21T20:08:44.811534+00:00",
   "execution": "Actual local Python ApprovalGate and temporary SQLite ledger",
   "cases": [
     {

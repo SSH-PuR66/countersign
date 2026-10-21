@@ -36,7 +36,7 @@ python fixtures.py
 
 ## Observed result
 
-The current run passes **84 tests**, including 13 input-ownership and copy-bound regressions and 15 saved-record integrity checks. The fixture comparison contains **29 scenarios**:
+The current run passes **105 tests**, including 13 input-ownership and copy-bound regressions, 15 saved-record integrity checks, and 21 evidence-bundle/integration checks. The fixture comparison contains **29 scenarios**:
 
 | Calls in this corpus | Count | Tool-name baseline allows | Approval gate allows |
 | --- | ---: | ---: | ---: |
@@ -61,6 +61,14 @@ Run `python snapshot_demo.py` for the actual SQLite decision record, or serve th
 `python verify_snapshot_record.py` checks the saved record without executing the gate or rewriting evidence. It rejects changed source hashes, malformed or duplicated JSON fields, inconsistent decisions, and ledger discrepancies. This separation between execution and record inspection draws on the evaluation-stage design of [HarmBench](https://github.com/centerforaisafety/HarmBench); this verifier is original code and copies no upstream implementation. A matching hash establishes consistency with the local source files, not authenticity or proof of execution.
 
 Snapshots make one evaluation internally consistent. They do not make an external executor use that snapshot, and they do not protect a trusted process from arbitrary in-process code.
+
+### Carry the evidence without executing it
+
+`python -B evidence_bundle.py create sealbreak-evidence.zip` packages 19 explicitly named public source, report and demo files with their byte lengths and SHA-256 hashes. Identical inputs produce identical ZIP bytes. `python -B evidence_bundle.py verify sealbreak-evidence.zip` checks the manifest, both saved reports and source consistency entirely in memory, without extraction, execution or regeneration. Creation refuses an existing destination; stale reports must be refreshed explicitly with `python -B verify.py`.
+
+The format rejects compressed/encrypted archives, duplicate or unsafe paths, missing/unexpected members, symlinks, excessive sizes, mismatched headers and failed checksums. It omits local secrets, live grants, SQLite state and illustration assets; this is an evidence bundle, not a self-contained website. [Format and limits](docs/evidence-bundles.md) · [Implementation](evidence_bundle.py) · [Adversarial archive tests](test_evidence_bundle.py).
+
+Carbon Copy now gives each recorded nonce a geometric fingerprint, keeps the original and private copy side by side, and offers step, scrub, play and pause controls. The nonce replacement changes only the caller's shape; the expiry case changes its timestamp while both nonce shapes remain equal. Playback pauses offscreen or in a hidden page; reduced motion keeps manual controls available. [Original virion illustration and prompt](assets/carbon-copy-virion-artwork.md).
 
 ```text
 Trusted host                                Untrusted proposal
