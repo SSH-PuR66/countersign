@@ -4,7 +4,7 @@
 
 [Step through Carbon Copy](https://sergrdz.pages.dev/labs/call-boundary/demos/carbon-copy/) · [Watch Attack Atlas](https://sergrdz.pages.dev/labs/attack-atlas/#sealbreak) · [Read the gate](boundary.py)
 
-[![Sealbreak: an original etched approval seal fractured by a returning grant.](assets/sealbreak-plate.png)](https://sergrdz.pages.dev/labs/call-boundary/demos/carbon-copy/)
+[![Sealbreak: paired virus shells separate when the caller mutates.](assets/carbon-copy-virion.png)](https://sergrdz.pages.dev/labs/call-boundary/demos/carbon-copy/)
 
 Original project artwork generated for Sergio Rodriguez. The illustration is separate from the recorded execution evidence.
 
