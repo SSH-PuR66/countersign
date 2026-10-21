@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "name": "Carbon Copy",
+  "recorded_at": "2026-10-21T19:42:22.709804+00:00",
+  "execution": "Actual local Python ApprovalGate and temporary SQLite ledger",
+  "cases": [
+    {
+      "name": "nonce-replaced",
+      "signed_fields": {
+        "nonce": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "expires_at": 1792600060
+      },
+      "callbacks": [
+        {
+          "now": 1792600000,
+          "caller_nonce": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "caller_expiry": 1792600060
+        },
+        {
+          "now": 1792600000,
+          "caller_nonce": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "caller_expiry": 1792600060
+        }
+      ],
+      "caller_after": {
+        "nonce": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "expires_at": 1792600060
+      },
+      "decision": {
+        "allowed": true,
+        "reason": "approved",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": true,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": true,
+            "detail": "Nonce committed atomically to the persistent replay ledger."
+          }
+        ]
+      },
+      "ledger_nonces": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      ],
+      "passed": true
+    },
+    {
+      "name": "expiry-extended",
+      "signed_fields": {
+        "nonce": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "expires_at": 1792600060
+      },
+      "callbacks": [
+        {
+          "now": 1792600060,
+          "caller_nonce": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "caller_expiry": 1792600300
+        }
+      ],
+      "caller_after": {
+        "nonce": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "expires_at": 1792600300
+      },
+      "decision": {
+        "allowed": false,
+        "reason": "grant_expired",
+        "checks": [
+          {
+            "name": "input",
+            "ok": true,
+            "detail": "Exact proposal fields and bounded JSON arguments."
+          },
+          {
+            "name": "grant_shape",
+            "ok": true,
+            "detail": "Exact versioned claims and signature encodings."
+          },
+          {
+            "name": "signature",
+            "ok": true,
+            "detail": "HMAC-SHA256 checked with constant-time comparison."
+          },
+          {
+            "name": "recipient",
+            "ok": true,
+            "detail": "Actor and audience match the host-supplied context."
+          },
+          {
+            "name": "tool",
+            "ok": true,
+            "detail": "Exact tool identifier matches the approval."
+          },
+          {
+            "name": "target",
+            "ok": true,
+            "detail": "Exact opaque target matches the approval."
+          },
+          {
+            "name": "arguments",
+            "ok": true,
+            "detail": "SHA-256 digest covers the entire arguments object."
+          },
+          {
+            "name": "time",
+            "ok": false,
+            "detail": "Issued time <= now < expiry; lifetime <= 300 seconds."
+          },
+          {
+            "name": "one_use",
+            "ok": null,
+            "detail": "Not evaluated after an earlier rejection."
+          }
+        ]
+      },
+      "ledger_nonces": [],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "source_sha256": {
+    "boundary.py": "baf08fbbb46bba6a8b435fc4751dd29c633b2ef627b40a649a215dd2313e525a",
+    "snapshot_demo.py": "9e84956f7d26fbf5c72186fb2af811d89c4acfbda319f824ca1feef242d27d67",
+    "test_snapshot.py": "ee24855af315dbbd7c0b905f65d2f43147d35e20db681408c3a7a0f44e09b360"
+  },
+  "baseline": {
+    "commit": "42ae08e1060372638dd78b522b1c21418654e7e3",
+    "command": "python -m unittest -v test_snapshot.MutableOwnershipTests",
+    "observed_before_fix": {
+      "tests": 2,
+      "failures": 2,
+      "nonce_written": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "expired_grant_decision": "approved"
+    }
+  },
+  "scope": "A caller-owned object changes during an injected clock callback. No operation is executed. The clock and process remain trusted; this is an API ownership regression, not remote exploitability."
+}
