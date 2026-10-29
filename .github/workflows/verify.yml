@@ -17,3 +17,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -B verify.py
+      - run: python -B -m unittest -v campaign_checks
+      - run: python -B adversarial_campaign.py --rounds 64

@@ -50,6 +50,22 @@ The tests exercise separate processes and threads, including 12 simultaneous thr
 
 ## The boundary
 
+### Stateful adversarial campaign — 28 October 2026
+
+The new [campaign runner](adversarial_campaign.py) generates nested synthetic proposals from a documented xorshift32 stream, then tries eleven mutations against each approval: tool and target substitution, nested argument changes, Boolean/integer confusion, array reordering, Unicode spelling changes, actor and audience substitution, a changed signed claim, the exact expiry instant, and a future time window. Attack ordering rotates between rounds.
+
+Each rejected attempt is followed by an actual SQLite row-count check. A benign object-key reorder must still consume exactly one grant; the subsequent exact replay must fail. This checks a state transition that a rejection-only score misses: a failed attack must not spend the legitimate caller's approval.
+
+The [recorded 64-round execution](evidence/stateful-campaign-2026-10-28.json) contains **832 decisions**: **704 mutation attempts rejected**, **64 benign controls accepted**, **64 replays rejected**, **64 consumed grants**, and **zero expectation mismatches**. Eight [campaign checks](campaign_checks.py) include deliberately broken gate adapters to verify that the observer detects both a false allow and unauthorized consumption. These are fresh local calls to the Python gate, not model or third-party attack measurements.
+
+```sh
+python -B -m unittest -v campaign_checks
+python -B adversarial_campaign.py --rounds 64
+python -B adversarial_campaign.py --seed 20261028 --rounds 128 --output dist/campaign.json
+```
+
+The runner bounds rounds to 1–512 and seeds to nonzero uint32. Temporary ledgers and fresh signing keys are discarded; the optional report contains only synthetic proposals, public nonces, observed decisions, runtime metadata and source hashes. No grant signature or signing key is exported. This separate campaign does not change the existing 29-scenario fixture or 19-file evidence-bundle format.
+
 ### Carbon Copy: caller mutation during validation
 
 The original verifier retained the caller's claims dictionary after checking its HMAC. Two deterministic tests failed at commit `42ae08e10603`: a clock callback changed the nonce later written to SQLite, and another extended the expiry after signature verification. This is a local API ownership defect; the tests do not establish remote exploitability or an untrusted clock.
