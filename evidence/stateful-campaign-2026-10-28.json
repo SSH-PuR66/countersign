@@ -8081,12 +8081,12 @@
   ],
   "limits": "Local synthetic decision-only gate. Curated mutation families, no external tool or model calls. Not exhaustive security coverage.",
   "execution": {
-    "recorded_at_utc": "2026-10-29T03:08:00.167560+00:00",
+    "recorded_at_utc": "2026-10-29T03:09:38.443408+00:00",
     "python": "3.14.5",
     "platform": "Windows",
     "source_sha256": {
       "boundary.py": "baf08fbbb46bba6a8b435fc4751dd29c633b2ef627b40a649a215dd2313e525a",
-      "adversarial_campaign.py": "ae35524d6d4adbc574bc09d764bf19b9b9e3cc6402a589ff09af36f0a0b61505",
+      "adversarial_campaign.py": "e6ef39d266d7cb457dcdd0ba3f7b4289709d58d172a3382279c1b3b1a187a4bd",
       "campaign_checks.py": "e433e6a4b40fea04aea4ff630736516d0da71f4cf72208da178f63eb6e1b0d87"
     }
   }
