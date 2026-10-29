@@ -1,0 +1,3447 @@
+{
+  "schema": "sealbreak-contention/v1",
+  "passed": true,
+  "scope": "Local synthetic decision gate; no tools executed, no third-party attack measurement.",
+  "method": "Persistent spawn workers wait at a process barrier for every phase; scheduling order is not deterministic.",
+  "parameters": {
+    "rounds": 16,
+    "workers": 8,
+    "clock": 1792972800
+  },
+  "runtime": {
+    "python": "3.14.5",
+    "platform": "Windows",
+    "start_method": "spawn",
+    "sqlite": "3.50.4"
+  },
+  "sources": {
+    "boundary.py": "baf08fbbb46bba6a8b435fc4751dd29c633b2ef627b40a649a215dd2313e525a",
+    "contention_campaign.py": "6c56181b51ae7ab65bde7d131b6f1388c7ea49f8d2612238b27c87fe35dc8026",
+    "contention_checks.py": "c3c81f4fe114281bc72c8720709847b15b97e457e724a7b5f80473506de4bc3f"
+  },
+  "summary": {
+    "decisions": 384,
+    "accepted": 16,
+    "rejected": 368,
+    "consumed_grants": 16,
+    "observed_worker_processes": 8,
+    "phase_failures": 0,
+    "reasons": {
+      "approved": 16,
+      "args_mismatch": 96,
+      "bad_signature": 96,
+      "replay": 176
+    }
+  },
+  "failures": [],
+  "rounds": [
+    {
+      "round": 0,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 0,
+      "ledger_after": 0
+    },
+    {
+      "round": 0,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 0,
+      "ledger_after": 1
+    },
+    {
+      "round": 0,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 1,
+      "ledger_after": 1
+    },
+    {
+      "round": 1,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 1,
+      "ledger_after": 1
+    },
+    {
+      "round": 1,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 1,
+      "ledger_after": 2
+    },
+    {
+      "round": 1,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 2,
+      "ledger_after": 2
+    },
+    {
+      "round": 2,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 2,
+      "ledger_after": 2
+    },
+    {
+      "round": 2,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 2,
+      "ledger_after": 3
+    },
+    {
+      "round": 2,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 3,
+      "ledger_after": 3
+    },
+    {
+      "round": 3,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 3,
+      "ledger_after": 3
+    },
+    {
+      "round": 3,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 3,
+      "ledger_after": 4
+    },
+    {
+      "round": 3,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 4,
+      "ledger_after": 4
+    },
+    {
+      "round": 4,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 4,
+      "ledger_after": 4
+    },
+    {
+      "round": 4,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 4,
+      "ledger_after": 5
+    },
+    {
+      "round": 4,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 5,
+      "ledger_after": 5
+    },
+    {
+      "round": 5,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 5,
+      "ledger_after": 5
+    },
+    {
+      "round": 5,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 5,
+      "ledger_after": 6
+    },
+    {
+      "round": 5,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 6,
+      "ledger_after": 6
+    },
+    {
+      "round": 6,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 6,
+      "ledger_after": 6
+    },
+    {
+      "round": 6,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 6,
+      "ledger_after": 7
+    },
+    {
+      "round": 6,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 7,
+      "ledger_after": 7
+    },
+    {
+      "round": 7,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 7,
+      "ledger_after": 7
+    },
+    {
+      "round": 7,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 7,
+      "ledger_after": 8
+    },
+    {
+      "round": 7,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 8,
+      "ledger_after": 8
+    },
+    {
+      "round": 8,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 8,
+      "ledger_after": 8
+    },
+    {
+      "round": 8,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 8,
+      "ledger_after": 9
+    },
+    {
+      "round": 8,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 9,
+      "ledger_after": 9
+    },
+    {
+      "round": 9,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 9,
+      "ledger_after": 9
+    },
+    {
+      "round": 9,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 9,
+      "ledger_after": 10
+    },
+    {
+      "round": 9,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 10,
+      "ledger_after": 10
+    },
+    {
+      "round": 10,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 10,
+      "ledger_after": 10
+    },
+    {
+      "round": 10,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 10,
+      "ledger_after": 11
+    },
+    {
+      "round": 10,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 11,
+      "ledger_after": 11
+    },
+    {
+      "round": 11,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 11,
+      "ledger_after": 11
+    },
+    {
+      "round": 11,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 11,
+      "ledger_after": 12
+    },
+    {
+      "round": 11,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 12,
+      "ledger_after": 12
+    },
+    {
+      "round": 12,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 12,
+      "ledger_after": 12
+    },
+    {
+      "round": 12,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 12,
+      "ledger_after": 13
+    },
+    {
+      "round": 12,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 13,
+      "ledger_after": 13
+    },
+    {
+      "round": 13,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 34772,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 13,
+      "ledger_after": 13
+    },
+    {
+      "round": 13,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 13,
+      "ledger_after": 14
+    },
+    {
+      "round": 13,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 14,
+      "ledger_after": 14
+    },
+    {
+      "round": 14,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 21612,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 14,
+      "ledger_after": 14
+    },
+    {
+      "round": 14,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 11700,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 14500,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "bad_signature": 4,
+        "replay": 3
+      },
+      "ledger_before": 14,
+      "ledger_after": 15
+    },
+    {
+      "round": 14,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 15,
+      "ledger_after": 15
+    },
+    {
+      "round": 15,
+      "phase": "invalid_only",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 19636,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 34772,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 11700,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 35036,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 6832,
+          "kind": "signature_swap",
+          "allowed": false,
+          "reason": "bad_signature"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "args_mismatch": 4,
+        "bad_signature": 4
+      },
+      "ledger_before": 15,
+      "ledger_after": 15
+    },
+    {
+      "round": 15,
+      "phase": "mixed",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": true,
+          "reason": "approved"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 36240,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 14500,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 21612,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 35036,
+          "kind": "argument_swap",
+          "allowed": false,
+          "reason": "args_mismatch"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 1,
+      "reasons": {
+        "approved": 1,
+        "args_mismatch": 4,
+        "replay": 3
+      },
+      "ledger_before": 15,
+      "ledger_after": 16
+    },
+    {
+      "round": 15,
+      "phase": "replay",
+      "attempts": [
+        {
+          "slot": 0,
+          "worker_pid": 35036,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 1,
+          "worker_pid": 21612,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 2,
+          "worker_pid": 14500,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 3,
+          "worker_pid": 36240,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 4,
+          "worker_pid": 34772,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 5,
+          "worker_pid": 19636,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 6,
+          "worker_pid": 6832,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        },
+        {
+          "slot": 7,
+          "worker_pid": 11700,
+          "kind": "valid",
+          "allowed": false,
+          "reason": "replay"
+        }
+      ],
+      "passed": true,
+      "errors": [],
+      "allowed": 0,
+      "reasons": {
+        "replay": 8
+      },
+      "ledger_before": 16,
+      "ledger_after": 16
+    }
+  ]
+}

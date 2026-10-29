@@ -19,3 +19,5 @@ jobs:
       - run: python -B verify.py
       - run: python -B -m unittest -v campaign_checks
       - run: python -B adversarial_campaign.py --rounds 64
+      - run: python -B -m unittest -v contention_checks
+      - run: python -B contention_campaign.py --rounds 16 --workers 8

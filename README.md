@@ -66,6 +66,22 @@ python -B adversarial_campaign.py --seed 20261028 --rounds 128 --output dist/cam
 
 The runner bounds rounds to 1–512 and seeds to nonzero uint32. Temporary ledgers and fresh signing keys are discarded; the optional report contains only synthetic proposals, public nonces, observed decisions, runtime metadata and source hashes. No grant signature or signing key is exported. This separate campaign does not change the existing 29-scenario fixture or 19-file evidence-bundle format.
 
+### Mixed process contention — 28 October 2026
+
+The [contention campaign](contention_campaign.py) releases eight persistent, independent Python processes through a process barrier for each of three waves against one fresh synthetic approval: all tampered requests, a mix of valid and tampered requests, then valid replays. The first wave must leave the approval untouched; the mixed wave must commit exactly one nonce; the replay wave must add no rows. Replies and the actual SQLite row count are checked separately after every wave.
+
+The [recorded 16-round run](evidence/contention-2026-10-28.json) contains **384 decisions** across **eight worker processes**: **16 approvals**, **96 argument mismatches**, **96 bad signatures**, and **176 rejected replays**. SQLite contains exactly **16 consumed grants**, with **zero phase failures**. Barrier release establishes contending participants, not simultaneous CPU execution or a deterministic winner. This complements the original small same-nonce race tests with mixed rejection/acceptance waves and state observations.
+
+Thirteen [observer checks](contention_checks.py) include a real four-process run and altered replies that simulate double acceptance, a false rejection, mutation acceptance, missing workers, serial execution, wrong control mixtures and disagreement with durable state. CI runs the checks and the 384-decision campaign on Python 3.12 and 3.14. Process IDs and winners vary; expected counts and state transitions do not. Fresh signing keys and temporary SQLite files are discarded, and no signed grant is exported.
+
+```sh
+python -B -m unittest -v contention_checks
+python -B contention_campaign.py --rounds 16 --workers 8
+python -B contention_campaign.py --rounds 16 --workers 8 --output dist/contention.json
+```
+
+Rounds are bounded to 1–32 and worker counts to even integers from 2–16. Each barrier and worker result has a deadline; output refuses an existing path. These are local decision-gate experiments, not measurements of distributed transactions or real tool execution. The original 105-test gate suite and its evidence records remain separate.
+
 ### Carbon Copy: caller mutation during validation
 
 The original verifier retained the caller's claims dictionary after checking its HMAC. Two deterministic tests failed at commit `42ae08e10603`: a clock callback changed the nonce later written to SQLite, and another extended the expiry after signature verification. This is a local API ownership defect; the tests do not establish remote exploitability or an untrusted clock.
