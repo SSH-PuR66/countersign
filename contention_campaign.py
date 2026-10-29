@@ -126,6 +126,8 @@ def run_campaign(*, rounds=16, workers=8):
                 for r in records if not r["passed"]]
     if consumed != rounds:
         failures.append({"round": None, "phase": "total", "errors": ["wrong_final_consumption"]})
+    if len({row["worker_pid"] for row in all_rows}) != workers:
+        failures.append({"round": None, "phase": "total", "errors": ["worker_process_was_replaced"]})
     return {"schema": "sealbreak-contention/v1", "passed": not failures,
             "scope": "Local synthetic decision gate; no tools executed, no third-party attack measurement.",
             "method": "Persistent spawn workers wait at a process barrier for every phase; scheduling order is not deterministic.",
@@ -151,7 +153,7 @@ def main():
         result = run_campaign(rounds=args.rounds, workers=args.workers)
         if args.output:
             args.output.parent.mkdir(parents=True, exist_ok=True)
-            with args.output.open("x", encoding="utf-8") as stream:
+            with args.output.open("x", encoding="utf-8", newline="\n") as stream:
                 json.dump(result, stream, indent=2)
                 stream.write("\n")
     except (ValueError, OSError, RuntimeError, BrokenBarrierError, multiprocessing.TimeoutError) as exc:

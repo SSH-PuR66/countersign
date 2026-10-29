@@ -16,7 +16,7 @@
   },
   "sources": {
     "boundary.py": "baf08fbbb46bba6a8b435fc4751dd29c633b2ef627b40a649a215dd2313e525a",
-    "contention_campaign.py": "6c56181b51ae7ab65bde7d131b6f1388c7ea49f8d2612238b27c87fe35dc8026",
+    "contention_campaign.py": "ffcb7ba90ab8a40f12d69086b09b68a6fa95b239fb767aed69b774046575be87",
     "contention_checks.py": "c3c81f4fe114281bc72c8720709847b15b97e457e724a7b5f80473506de4bc3f"
   },
   "summary": {
@@ -41,56 +41,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 14500,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -112,56 +112,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 14500,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 6832,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": true,
           "reason": "approved"
         },
         {
           "slot": 7,
-          "worker_pid": 19636,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -184,56 +184,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 19636,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 6832,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -254,56 +254,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 11700,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 14500,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 6832,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 21612,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -325,56 +325,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 35036,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 13680,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 3,
-          "worker_pid": 6832,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 21612,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -397,56 +397,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 21612,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 14500,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 19636,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -467,56 +467,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 35036,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 11700,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 21612,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -538,56 +538,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 14500,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 40024,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 7,
-          "worker_pid": 19636,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -610,56 +610,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 21612,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 14500,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -680,56 +680,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 11700,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 21612,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 14500,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -751,56 +751,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 19636,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 21612,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -823,56 +823,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 11700,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 19636,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 21612,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -893,56 +893,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 36240,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 14500,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -964,56 +964,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 21612,
+          "worker_pid": 27820,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -1036,56 +1036,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 36240,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 19636,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 14500,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 11700,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 35036,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 21612,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -1106,56 +1106,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 6832,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 21612,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -1177,56 +1177,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 3,
-          "worker_pid": 14500,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 19636,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -1249,56 +1249,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 21612,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 6832,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -1319,56 +1319,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 34772,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 6832,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 21612,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -1390,56 +1390,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 19636,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": true,
           "reason": "approved"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 34772,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -1462,56 +1462,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 6832,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 19636,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 14500,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -1532,56 +1532,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 11700,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -1603,56 +1603,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": true,
           "reason": "approved"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 35036,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 36240,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 34772,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -1675,56 +1675,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 19636,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 6832,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 36240,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 11700,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -1745,56 +1745,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 21612,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 6832,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 11700,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 36240,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -1816,56 +1816,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 6832,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": true,
           "reason": "approved"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -1888,56 +1888,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 34772,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 6832,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 14500,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -1958,56 +1958,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 6832,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 14500,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 19636,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -2029,56 +2029,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": true,
           "reason": "approved"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 21612,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 14500,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -2101,56 +2101,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 21612,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -2171,56 +2171,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 19636,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 14500,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -2242,56 +2242,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -2314,56 +2314,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 19636,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 14500,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 35036,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 21612,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -2384,56 +2384,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 21612,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 6832,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 14500,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 34772,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -2455,56 +2455,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 1,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 21612,
+          "worker_pid": 27508,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 14500,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 6832,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -2527,56 +2527,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 21612,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 11700,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 6832,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -2597,56 +2597,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 34772,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 19636,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 21612,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 6832,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -2668,56 +2668,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 36240,
+          "worker_pid": 27508,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 19636,
+          "worker_pid": 31204,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 3,
-          "worker_pid": 21612,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 34772,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -2740,56 +2740,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 14500,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -2810,56 +2810,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 35036,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 34772,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 14500,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 6832,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 36240,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 19636,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -2881,56 +2881,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 35036,
+          "worker_pid": 26880,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 14500,
+          "worker_pid": 13680,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 3,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 36240,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 34772,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -2953,56 +2953,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 34772,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 6832,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 19636,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 11700,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -3023,56 +3023,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 36240,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 11700,
+          "worker_pid": 31072,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 19636,
+          "worker_pid": 27508,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 35036,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 14500,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 34772,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 21612,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -3094,56 +3094,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": true,
           "reason": "approved"
         },
         {
           "slot": 1,
-          "worker_pid": 19636,
+          "worker_pid": 27820,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 21612,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 35036,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 14500,
+          "worker_pid": 31204,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -3166,56 +3166,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 19636,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 36240,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 11700,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 21612,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 34772,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
@@ -3236,56 +3236,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 14500,
+          "worker_pid": 27820,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 1,
-          "worker_pid": 19636,
+          "worker_pid": 40024,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 2,
-          "worker_pid": 34772,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 13680,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 4,
-          "worker_pid": 11700,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 5,
-          "worker_pid": 35036,
+          "worker_pid": 39604,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
         },
         {
           "slot": 6,
-          "worker_pid": 21612,
+          "worker_pid": 27508,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 7,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "signature_swap",
           "allowed": false,
           "reason": "bad_signature"
@@ -3307,56 +3307,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 34772,
+          "worker_pid": 27820,
           "kind": "valid",
-          "allowed": true,
-          "reason": "approved"
+          "allowed": false,
+          "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 36240,
+          "worker_pid": 13680,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 2,
-          "worker_pid": 19636,
+          "worker_pid": 40024,
           "kind": "valid",
-          "allowed": false,
-          "reason": "replay"
+          "allowed": true,
+          "reason": "approved"
         },
         {
           "slot": 3,
-          "worker_pid": 14500,
+          "worker_pid": 26880,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 4,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 21612,
+          "worker_pid": 31204,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
         },
         {
           "slot": 6,
-          "worker_pid": 11700,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 35036,
+          "worker_pid": 39604,
           "kind": "argument_swap",
           "allowed": false,
           "reason": "args_mismatch"
@@ -3379,56 +3379,56 @@
       "attempts": [
         {
           "slot": 0,
-          "worker_pid": 35036,
+          "worker_pid": 13680,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 1,
-          "worker_pid": 21612,
+          "worker_pid": 39604,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 2,
-          "worker_pid": 14500,
+          "worker_pid": 26880,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 3,
-          "worker_pid": 36240,
+          "worker_pid": 31204,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 4,
-          "worker_pid": 34772,
+          "worker_pid": 40024,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 5,
-          "worker_pid": 19636,
+          "worker_pid": 27820,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 6,
-          "worker_pid": 6832,
+          "worker_pid": 31072,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
         },
         {
           "slot": 7,
-          "worker_pid": 11700,
+          "worker_pid": 27508,
           "kind": "valid",
           "allowed": false,
           "reason": "replay"
